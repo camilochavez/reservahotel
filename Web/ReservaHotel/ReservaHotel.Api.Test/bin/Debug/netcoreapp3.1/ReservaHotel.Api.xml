@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReservaHotel.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ReservaHotel.Api.Controllers.ReservaController.Post(ReservaHotel.Model.Dto.ReservaParametrosDto)">
+            <summary>
+            Crear una reserva basada en los datos de usuario, habitación y fechas
+            </summary>
+            <param name="reservaData">Datos de la reserva</param>
+            <returns>Estado de la creación de la reserva</returns>
+        </member>
+        <member name="M:ReservaHotel.Api.Controllers.ReservaController.Delete(System.Int32)">
+            <summary>
+            Cancelar una reserva
+            </summary>
+            <param name="idReserva">Id de la reserva</param>
+            <returns>Estdo de la cancelación de la reserva</returns>
+        </member>
+        <member name="M:ReservaHotel.Api.Controllers.ReservaController.GetByDates(System.DateTime,System.DateTime)">
+            <summary>
+            Obtener las reservas activas dada una fecha de inicio y fin
+            </summary>
+            <param name="fechaInicio">Fecha Inicio</param>
+            <param name="fechaFin">Fecha Fin</param>
+            <returns>Reservas</returns>
+        </member>
+        <member name="M:ReservaHotel.Api.Filters.ValidationDatesFilterAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Validar el modelo de datos durante la ejecución
+            </summary>
+            <param name="context">contexto de la ejecución</param>
+        </member>
+        <member name="M:ReservaHotel.Api.Filters.ValidationFilterAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Validar el modelo de datos durante la ejecución
+            </summary>
+            <param name="context">contexto de la ejecución</param>
+        </member>
+    </members>
+</doc>
