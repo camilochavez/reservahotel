@@ -5,11 +5,15 @@
     [FechaEntrada] DATETIME NOT NULL,
     [FechaSalida]  DATETIME NOT NULL,
     [FechaReserva] DATE     NOT NULL,
-    [Estado]       BIT      NOT NULL,
+    [IdEstado]     INT      NOT NULL,
     CONSTRAINT [PK_Reserva] PRIMARY KEY CLUSTERED ([IdReserva] ASC),
+    CONSTRAINT [FK_Reserva_Estado] FOREIGN KEY ([IdEstado]) REFERENCES [dbo].[Estado] ([IdEstado]),
     CONSTRAINT [FK_Reserva_Habitacion] FOREIGN KEY ([IdHabitacion]) REFERENCES [dbo].[Habitacion] ([IdHabitacion]),
-    CONSTRAINT [FK_Reserva_Usuario] FOREIGN KEY ([IdReserva]) REFERENCES [dbo].[Usuario] ([IdUsuario])
+    CONSTRAINT [FK_Reserva_Reserva] FOREIGN KEY ([IdReserva]) REFERENCES [dbo].[Reserva] ([IdReserva]),
+    CONSTRAINT [FK_Reserva_Usuario] FOREIGN KEY ([IdUsuario]) REFERENCES [dbo].[Usuario] ([IdUsuario])
 );
+
+
 
 
 GO
@@ -21,5 +25,5 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Fecha Salid
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Estado Reservado/Cancelado', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'Reserva', @level2type = N'COLUMN', @level2name = N'Estado';
+
 

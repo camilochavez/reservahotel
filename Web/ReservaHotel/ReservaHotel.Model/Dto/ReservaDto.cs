@@ -4,7 +4,6 @@
 // </summary> 
 // =============================================================================================================== 
 
-
 using System;
 
 namespace ReservaHotel.Model.Dto
@@ -28,15 +27,15 @@ namespace ReservaHotel.Model.Dto
         /// </summary>
         public string DescricionHabitacion { get; set; }
         /// <summary>
-        /// Fecha de Entrada
+        /// Fecha de Entrada yyyy-MM-dd
         /// </summary>
         public DateTime FechaEntrada { get; set; }
         /// <summary>
-        /// Fecha de Salida
+        /// Fecha de Salida yyyy-MM-dd
         /// </summary>
         public DateTime FechaSalida { get; set; }
         /// <summary>
-        /// Fecha de Reserva
+        /// Fecha de Reserva yyyy-MM-dd
         /// </summary>
         public DateTime FechaReserva { get; set; }
         /// <summary>

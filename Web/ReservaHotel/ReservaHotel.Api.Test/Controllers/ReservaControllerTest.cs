@@ -14,6 +14,7 @@ namespace ReservaHotel.Api.Test.Controllers
     public class ReservaControllerTest
     {
         private ReservaController reservaController;
+        // Se Crean objetos tipo mock para realizar un simil de los servicios a consultar de manera simulada
         private Mock<IReservaRepo> reservaRepoMock;
         private Mock<ILogger<ReservaController>> loggerMock;
 
@@ -32,8 +33,8 @@ namespace ReservaHotel.Api.Test.Controllers
             //Dado
             ReservaParametrosDto reservaData = new ReservaParametrosDto
             {
-                FechaEntrada = DateTime.Now,
-                FechaSalida = DateTime.Now.AddDays(3),
+                FechaEntrada = DateTime.Now.ToString(),
+                FechaSalida = DateTime.Now.AddDays(3).ToString(),
                 IdHotel = 1,
                 IdUsuario = 1
             };
@@ -53,8 +54,8 @@ namespace ReservaHotel.Api.Test.Controllers
             //Dado
             ReservaParametrosDto reservaData = new ReservaParametrosDto
             {
-                FechaEntrada = DateTime.Now,
-                FechaSalida = DateTime.Now.AddDays(3),
+                FechaEntrada = DateTime.Now.ToString(),
+                FechaSalida = DateTime.Now.AddDays(3).ToString(),
                 IdHotel = 0,
                 IdUsuario = 1
             };
@@ -122,7 +123,7 @@ namespace ReservaHotel.Api.Test.Controllers
             reservaRepoMock.Setup(rm => rm.GetReservaByDate(fechaInicio, fechaFin)).Returns(Task.FromResult(reservaResult));
 
             //Cuando 
-            var result = reservaController.GetByDates(fechaInicio, fechaFin);
+            var result = reservaController.GetByDates(fechaInicio.ToString(), fechaFin.ToString());
 
             //entonces
             Assert.IsNotNull(result.Result);
@@ -150,7 +151,7 @@ namespace ReservaHotel.Api.Test.Controllers
             reservaRepoMock.Setup(rm => rm.GetReservaByDate(fechaInicio, fechaFin)).Throws(new Exception());
 
             //Cuando 
-            var result = reservaController.GetByDates(fechaInicio, fechaFin);
+            var result = reservaController.GetByDates(fechaInicio.ToString(), fechaFin.ToString());
 
             //entonces
             Assert.IsNull(result.Result);

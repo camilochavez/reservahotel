@@ -1,0 +1,240 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Reserva Hotel API",
+    "description": "Reserva Hotel ASP.NET Core API",
+    "contact": {
+      "name": "Camilo Chavez",
+      "email": "darkcamil@hotmail.com"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/reserva": {
+      "post": {
+        "tags": [
+          "Reserva"
+        ],
+        "summary": "Crear una reserva basada en los datos de usuario, habitación y fechas",
+        "requestBody": {
+          "description": "Datos de la reserva",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservaParametrosDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservaParametrosDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservaParametrosDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reserva"
+        ],
+        "summary": "Cancelar una reserva",
+        "parameters": [
+          {
+            "name": "idReserva",
+            "in": "query",
+            "description": "Id de la reserva",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Reserva"
+        ],
+        "summary": "Obtener las reservas activas dada una fecha de inicio y fin",
+        "parameters": [
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "description": "Fecha Inicio yyyy-MM-dd",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "description": "Fecha Fin yyyy-MM-dd",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReservaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReservaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReservaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ReservaDto": {
+        "type": "object",
+        "properties": {
+          "nombreHotel": {
+            "type": "string",
+            "description": "Nombre del hotel de la reserva",
+            "nullable": true
+          },
+          "correoUsuario": {
+            "type": "string",
+            "description": "Correo del usuario que reservó",
+            "nullable": true
+          },
+          "nombreCompletoUsuario": {
+            "type": "string",
+            "description": "Nombre Completo Usuario",
+            "nullable": true
+          },
+          "descricionHabitacion": {
+            "type": "string",
+            "description": "Descripcion de la habitación reservada",
+            "nullable": true
+          },
+          "fechaEntrada": {
+            "type": "string",
+            "description": "Fecha de Entrada yyyy-MM-dd",
+            "format": "date-time"
+          },
+          "fechaSalida": {
+            "type": "string",
+            "description": "Fecha de Salida yyyy-MM-dd",
+            "format": "date-time"
+          },
+          "fechaReserva": {
+            "type": "string",
+            "description": "Fecha de Reserva yyyy-MM-dd",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string",
+            "description": "Estado de la reserva, se declara virtual para hacer un lazy load de los datos",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservaParametrosDto": {
+        "required": [
+          "fechaEntrada",
+          "fechaSalida"
+        ],
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Identificador único del usuario",
+            "format": "int32"
+          },
+          "idHotel": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Identificador único del hotel",
+            "format": "int32"
+          },
+          "fechaEntrada": {
+            "type": "string",
+            "description": "Fecha de Entrada yyyy-MM-dd"
+          },
+          "fechaSalida": {
+            "type": "string",
+            "description": "Fecha de Salida yyyy-MM-dd"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

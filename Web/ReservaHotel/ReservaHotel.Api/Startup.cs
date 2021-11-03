@@ -66,9 +66,14 @@ namespace ReservaHotel.Api
                         Email = "darkcamil@hotmail.com" // To configure any email we need to be redirected
                     }
                 });
+                //Obteniendo el xml de comentarios del controlador
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);  
                 c.IncludeXmlComments(xmlPath);
+                //Obteniendo el xml de comentarios de los modelos
+                var xmlFileModel = $"{Assembly.GetAssembly(typeof(Model.Reserva)).GetName().Name}.xml";
+                var xmlPathModel = Path.Combine(AppContext.BaseDirectory, xmlFileModel);
+                c.IncludeXmlComments(xmlPathModel);
             });
         }
 

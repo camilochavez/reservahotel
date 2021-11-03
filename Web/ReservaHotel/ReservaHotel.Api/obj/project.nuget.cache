@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SwHrboS6xrL4KNsSwBmFr0Yj12X6RwD/gClsUGEM6oosblAmTS8BHU14T3rkXN8UgiQlXwZUo+lkPpoYua8fvg==",
+  "dgSpecHash": "lg4GGFoCopNV9U3KKVIc/VJhlOnRRt5ZyUAAGHb4I0AIbS1QH4jYnfNIySY16kc/HMHnTJiY8Q2GVTs99gPYRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj",
+  "projectFilePath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jchave71\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\jchave71\\.nuget\\packages\\efcore.checkconstraints\\5.0.1\\efcore.checkconstraints.5.0.1.nupkg.sha512",

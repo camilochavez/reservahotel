@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Hotel] (
     [IdHotel]            INT            IDENTITY (1, 1) NOT NULL,
     [Nombre]             NVARCHAR (250) NOT NULL,
-    [IdPais]             TINYINT        NOT NULL,
+    [IdPais]             INT        NOT NULL,
     [Latitud]            DECIMAL (18)   NOT NULL,
     [Longitud]           DECIMAL (18)   NOT NULL,
     [Descripcion]        NVARCHAR (250) NOT NULL,

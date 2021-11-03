@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Pais] (
-    [IdPais]     TINYINT        NOT NULL,
+    [IdPais]     INT        NOT NULL,
     [NombrePais] NVARCHAR (250) NOT NULL,
     CONSTRAINT [PK_Pais] PRIMARY KEY CLUSTERED ([IdPais] ASC)
 );

@@ -61,12 +61,23 @@ namespace ReservaHotel.Repository
         /// <returns>Verdadeto o falso según el resultado de la operación</returns>
         public async Task<bool> Create(ReservaParametrosDto reservaData)
         {
+            //Revisar si el hotel esta activo
+            if (!dataContext.Hoteles.Any(h => h.IdHotel == reservaData.IdHotel && h.Activo))
+                return false;
+
             // Se valida que no haya una reserva activa para esa fecha y esa habitación
-            List<Habitacion> habitaciones = dataContext.Habitaciones.Include(r => r.Reservas).Where(h => h.Hotel.IdHotel == reservaData.IdHotel).ToList();
-            var habitacion = habitaciones.FirstOrDefault(h => !h.Reservas.Any(r => ValidarReservaActiva(reservaData.FechaEntrada, reservaData.FechaSalida.AddDays(-1), r)));
+            List<Habitacion> habitaciones = dataContext.Habitaciones
+                                            .Where(h => h.Hotel.IdHotel == reservaData.IdHotel).ToList();
+            List<Habitacion> habitacionLibres = new List<Habitacion>();
+            habitaciones.ForEach(habitacion =>
+            {
+                bool estaLibre = !habitacion.Reservas.Any(r => r.Habitacion.IdHabitacion == habitacion.IdHabitacion && ValidarReservaActiva(DateTime.Parse(reservaData.FechaEntrada), DateTime.Parse(reservaData.FechaSalida).AddDays(-1), r));
+                if (estaLibre)
+                    habitacionLibres.Add(habitacion);
+            });
 
             // Si no hay habitaciones disponibles se retorna falso
-            if (habitacion == null)
+            if (habitacionLibres.Count() == 0)
                 return false;
 
             //Creando un objeto del tipo reserva
@@ -74,11 +85,11 @@ namespace ReservaHotel.Repository
             {
                 //Obteniendo el estado de la bd
                 Estado = await dataContext.Estado.SingleAsync(e => e.IdEstado == 1),
-                FechaEntrada = reservaData.FechaEntrada,
+                FechaEntrada = DateTime.Parse(reservaData.FechaEntrada),
                 FechaReserva = DateTime.Now,
-                FechaSalida = reservaData.FechaSalida,
+                FechaSalida = DateTime.Parse(reservaData.FechaSalida),
                 //Obteniendo la habitación de la base de datos
-                Habitacion = habitacion,
+                Habitacion = habitacionLibres.FirstOrDefault(),
                 //Obteniendo los usarios de la base de datos
                 Usuario = await dataContext.Usuarios.SingleAsync(u => u.IdUsuario == reservaData.IdUsuario)
             };
@@ -115,8 +126,12 @@ namespace ReservaHotel.Repository
         {
             //Obteniendo solo las reservas que esten activas y que cumplan con el rango de fechas dada por el usuario
             //Se resta un día a la fecha de salida para no tenerlo en cuenta como día de reserva ya que el usuario sale en la mañana
-            var reservas = await dataContext.Reservas.Where(r => ValidarReservaActiva(FechaInicio, FechaFin, r))
-                                            .Include(r => r.Usuario).Include(r => r.Estado).ToListAsync();
+            var reservas = await dataContext.Reservas.Where(reserva => reserva.Estado.IdEstado == 1 &&
+                                                   ((FechaInicio <= reserva.FechaEntrada && FechaFin >= reserva.FechaSalida.AddDays(-1))
+                                                     || (FechaInicio >= reserva.FechaEntrada && FechaFin <= reserva.FechaSalida.AddDays(-1))
+                                                     || (FechaInicio <= reserva.FechaEntrada && FechaFin <= reserva.FechaSalida.AddDays(-1) && reserva.FechaEntrada <= FechaFin)
+                                                     || (FechaInicio >= reserva.FechaEntrada && FechaFin >= reserva.FechaSalida.AddDays(-1) && reserva.FechaSalida.AddDays(-1) >= FechaInicio)))
+                                            .ToListAsync();
 
             List<ReservaDto> reservaListado = reservas.Select(r => new ReservaDto
             {

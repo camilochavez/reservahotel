@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj": {}
+    "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj": {
+    "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj",
+        "projectUniqueName": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj",
         "projectName": "ReservaHotel.Api",
-        "projectPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj",
+        "projectPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api\\ReservaHotel.Api.csproj",
         "packagesPath": "C:\\Users\\jchave71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api\\obj\\",
+        "outputPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jchave71\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,19 +21,18 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://selection-navigator.pkgs.visualstudio.com/_packaging/External/nuget/v3/index.json": {},
-          "https://selection-navigator.pkgs.visualstudio.com/_packaging/Internal/nuget/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj": {
-                "projectPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj"
+              "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj": {
+                "projectPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj"
               },
-              "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj": {
-                "projectPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj"
+              "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj": {
+                "projectPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj"
               }
             }
           }
@@ -97,18 +96,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj": {
+    "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj",
+        "projectUniqueName": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj",
         "projectName": "ReservaHotel.Model",
-        "projectPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj",
+        "projectPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj",
         "packagesPath": "C:\\Users\\jchave71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\obj\\",
+        "outputPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jchave71\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -118,9 +117,8 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://selection-navigator.pkgs.visualstudio.com/_packaging/External/nuget/v3/index.json": {},
-          "https://selection-navigator.pkgs.visualstudio.com/_packaging/Internal/nuget/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -152,18 +150,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj": {
+    "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj",
         "projectName": "ReservaHotel.Repository",
-        "projectPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj",
+        "projectPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\ReservaHotel.Repository.csproj",
         "packagesPath": "C:\\Users\\jchave71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\obj\\",
+        "outputPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jchave71\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -173,16 +171,15 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://selection-navigator.pkgs.visualstudio.com/_packaging/External/nuget/v3/index.json": {},
-          "https://selection-navigator.pkgs.visualstudio.com/_packaging/Internal/nuget/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj": {
-                "projectPath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj"
+              "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj": {
+                "projectPath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Model\\ReservaHotel.Model.csproj"
               }
             }
           }
@@ -229,7 +226,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     }

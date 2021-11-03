@@ -6,6 +6,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using ReservaHotel.Model.Dto;
+using System;
 using System.Linq;
 
 namespace ReservaHotel.Api.Filters
@@ -29,7 +30,7 @@ namespace ReservaHotel.Api.Filters
                 context.Result = new BadRequestObjectResult("No hay parametros para la operacion");
                 return;
             }
-            if (((ReservaParametrosDto)param.Value).FechaSalida < ((ReservaParametrosDto)param.Value).FechaEntrada)
+            if (DateTime.Parse(((ReservaParametrosDto)param.Value).FechaSalida) <= DateTime.Parse(((ReservaParametrosDto)param.Value).FechaEntrada))
             {
                 context.Result = new BadRequestObjectResult("La Fecha de entrada debe ser mayor a la de salida");
                 return;

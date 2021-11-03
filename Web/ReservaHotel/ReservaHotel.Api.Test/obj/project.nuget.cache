@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9wi79d4Us45PMsFRxnir7GM/5lmeubkhUZlvTS42MdNI1NlMStKLMIvWWXdhHJ7My5UVMo9oA5E9FAyAhubwzA==",
+  "dgSpecHash": "k1imfHANm1B7mBPkSfryojpCmmYNt7ry1BNSJD24iA1L2FmtMoYdn03YuULm1XmyoTQxdn/Av31dXwmD1l61Nw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jchave71\\source\\repos\\ReservaHotel\\Web\\ReservaHotel\\ReservaHotel.Api.Test\\ReservaHotel.Api.Test.csproj",
+  "projectFilePath": "C:\\Users\\jchave71\\source\\repos\\reservahotel\\Web\\ReservaHotel\\ReservaHotel.Api.Test\\ReservaHotel.Api.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jchave71\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\jchave71\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",

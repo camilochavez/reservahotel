@@ -75,17 +75,17 @@ namespace ReservaHotel.Api.Controllers
         /// <summary>
         /// Obtener las reservas activas dada una fecha de inicio y fin
         /// </summary>
-        /// <param name="fechaInicio">Fecha Inicio</param>
-        /// <param name="fechaFin">Fecha Fin</param>
+        /// <param name="fechaInicio">Fecha Inicio yyyy-MM-dd</param>
+        /// <param name="fechaFin">Fecha Fin yyyy-MM-dd</param>
         /// <returns>Reservas</returns>
         // GET: api/Reserva?fechaInicio=01/01/1900&fechaFin=01/01/1900        
         [HttpGet()]
         [ServiceFilter(typeof(ValidationDatesFilterAttribute))]
-        public async Task<List<ReservaDto>> GetByDates([FromQuery] DateTime fechaInicio, [FromQuery] DateTime fechaFin)
+        public async Task<List<ReservaDto>> GetByDates([FromQuery] string fechaInicio, [FromQuery] string fechaFin)
         {
             try
             {
-                return await reservaRepo.GetReservaByDate(fechaInicio, fechaFin);
+                return await reservaRepo.GetReservaByDate(DateTime.Parse(fechaInicio), DateTime.Parse(fechaFin));
             }
             catch (Exception ex)
             {

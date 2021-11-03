@@ -18,12 +18,12 @@
             <param name="idReserva">Id de la reserva</param>
             <returns>Estdo de la cancelación de la reserva</returns>
         </member>
-        <member name="M:ReservaHotel.Api.Controllers.ReservaController.GetByDates(System.DateTime,System.DateTime)">
+        <member name="M:ReservaHotel.Api.Controllers.ReservaController.GetByDates(System.String,System.String)">
             <summary>
             Obtener las reservas activas dada una fecha de inicio y fin
             </summary>
-            <param name="fechaInicio">Fecha Inicio</param>
-            <param name="fechaFin">Fecha Fin</param>
+            <param name="fechaInicio">Fecha Inicio yyyy-MM-dd</param>
+            <param name="fechaFin">Fecha Fin yyyy-MM-dd</param>
             <returns>Reservas</returns>
         </member>
         <member name="M:ReservaHotel.Api.Filters.ValidationDatesFilterAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">

@@ -22,14 +22,16 @@ namespace ReservaHotel.Model.Dto
         [Range(1, int.MaxValue, ErrorMessage = "Id Hotel, debe ingresar un valor numérico mayor a cero.")]
         public int IdHotel { get; set; }
         /// <summary>
-        /// Fecha de Entrada
+        /// Fecha de Entrada yyyy-MM-dd
         /// </summary>
         [Required(ErrorMessage = "Fecha Entrada es requerida")]
-        public DateTime FechaEntrada { get; set; }
+        [DisplayFormat(DataFormatString = "yyyy-MM-dd")]
+        public string FechaEntrada { get; set; }
         /// <summary>
-        /// Fecha de Salida
+        /// Fecha de Salida yyyy-MM-dd
         /// </summary>
+        [DisplayFormat(DataFormatString = "yyyy-MM-dd")]
         [Required(ErrorMessage = "Fecha Salida es requerida")]
-        public DateTime FechaSalida { get; set; }
+        public string FechaSalida { get; set; }
     }
 }
